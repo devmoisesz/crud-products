@@ -19,8 +19,8 @@ server.get('/products', (req, res) => {
 
 server.get('/products/:id', (req, res) => {
     const productId = req.params.id
-    const IDproduct = products.find(p => p.id === Number(productId))
-    if(!IDproduct){
+    const product = products.find(p => p.id === Number(productId))
+    if(!product){
         return res.status(404).json({message: 'Produto não encontrado'})
     }
 
@@ -38,6 +38,16 @@ server.put('/products/:id', (req, res) => {
     product.name = name || product.name
     product.price = price || product.price
     return res.status(200).json(product)
+})
+server.delete('/products/:id', (req, res) => {
+    const productId = req.params.id
+    const product = products.find(p => p.id === Number(productId))
+    if(!product){
+        return res.status(404).json({message: 'Produto não encontrado'})
+    }
+    const posArray = products.findIndex(n => n.id === Number(productId))
+    products.splice(posArray, 1)
+    return res.status(200).json({message: 'Produto Apagado com sucesso!'})
 })
 server.listen(3020, () => {
     console.log("Servidor Rodando na porta 3020")
