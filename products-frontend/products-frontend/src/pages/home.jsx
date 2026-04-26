@@ -69,8 +69,8 @@ function Home(){
           name="stock" id="stock" 
           placeholder='Estoque: '/></p>
 
-          <button type="button" onClick={cadastro}>Cadastrar Produto</button>
-          <button type="button" onClick={() => navigate('/products')}>Produtos Cadastrados</button>
+          <button className={styles.button} type="button" onClick={cadastro}>Cadastrar Produto</button>
+          <button className={styles.button} type="button" onClick={() => navigate('/products')}>Produtos Cadastrados</button>
         </div>
       </main>
     </>
