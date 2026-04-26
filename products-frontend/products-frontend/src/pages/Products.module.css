@@ -1,0 +1,63 @@
+body{
+    background-color: #eee;
+}
+.header{
+    background-color: cornflowerblue;
+    padding: 20px;
+    text-align: center;
+    border-radius: 0 0 20px 20px;
+    margin-top: 1px;
+    margin-bottom: 20px;
+}
+.header h1{
+    margin: 0;
+    color: white;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+}
+main{
+    margin: auto;
+    background-color: white;
+    max-width: 800px;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    overflow: hidden;
+    border-bottom: 1px solid black;
+}
+th{
+    background-color: cornflowerblue;
+    color: white;
+    padding: 12px 15px;
+    text-align: left;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+    border-right: 1px solid black;
+}
+td{
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid black;
+    border: 1px solid black;
+    color: black;
+    font-size: 0.95rem;
+    
+}
+td:last-child, th:last-child {
+    border-right: none;
+}
+/* Efeito de zebra e hover na tabela */
+table tr:nth-child(even) {
+    background-color: #f9fafb;
+}
+table tr:hover {
+    background-color: #f3f4f6;
+    transition: 0.2s ease;
+}
