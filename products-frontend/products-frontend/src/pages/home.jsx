@@ -13,6 +13,10 @@ function Home(){
   //Requisição HTTP POST
   async function cadastro(event) {
     event.preventDefault()
+    if(!name || !price || !descripition || !category || !stock){
+      alert('ERRO! Preencha os campos antes de cadastrar!')
+      return
+    }
 
     await fetch('http://localhost:3020/products', {
       method: 'POST',
@@ -49,7 +53,7 @@ function Home(){
           <p>Preço: <input value={price} onChange={(e) => 
           setPrice(e.target.value)}
           type="number" name='price' id='price' 
-          placeholder='Preço: ' 
+          placeholder='Preço: ' min={0}
           /></p>
 
           <p>Descrição:<input value={descripition} onChange={(e) => 
@@ -67,7 +71,8 @@ function Home(){
           setStock(e.target.value)}
           type="number" 
           name="stock" id="stock" 
-          placeholder='Estoque: '/></p>
+          placeholder='Estoque: ' min={0}
+          /></p>
 
           <button className={styles.button} type="button" onClick={cadastro}>Cadastrar Produto</button>
           <button className={styles.button} type="button" onClick={() => navigate('/products')}>Produtos Cadastrados</button>
